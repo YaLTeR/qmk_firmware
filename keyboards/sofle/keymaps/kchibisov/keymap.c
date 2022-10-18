@@ -182,6 +182,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+void keyboard_post_init_user(void) {
+    rgblight_sethsv_range(7, 255, 255, 0, 36);
+    rgblight_sethsv_range(HSV_PURPLE, 36, 72);
+}
+
 #ifdef ENCODER_ENABLE
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
