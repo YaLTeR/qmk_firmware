@@ -6,7 +6,7 @@
 /* Select hand configuration */
 
 #define MASTER_LEFT
-// #define MASTER_RIGHT
+//#define MASTER_RIGHT
 //#define EE_HANDS
 //#define USE_SERIAL_PD2
 //#define USE_MATRIX_I2C
@@ -18,6 +18,9 @@
 
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 100
+#define PERMISSIVE_HOLD
+#define NO_ACTION_ONESHOT
+#define USB_POLLING_INTERVAL_MS 1
 
 /* ws2812 RGB LED */
 #define RGB_DI_PIN D3
