@@ -17,6 +17,7 @@
 #define ENCODER_RESOLUTION 4
 
 #define TAPPING_FORCE_HOLD
+#undef TAPPING_TERM
 #define TAPPING_TERM 100
 #define PERMISSIVE_HOLD
 #define NO_ACTION_ONESHOT
@@ -33,10 +34,20 @@
 #define WPM_SAMPLE_SECONDS 5
 #define WPM_SAMPLE_PERIODS 25
 
+
+#if defined(KEYBOARD_sofle_sophie)
+#    define OLED_DISPLAY_128X64
+#endif
+
 #ifdef RGBLIGHT_ENABLE
-#define RGBLED_NUM 72
-#define RGBLIGHT_SPLIT
-#define RGBLED_SPLIT { 36, 36 }
+#undef RGBLED_NUM
+#if defined(KEYBOARD_sofle_rev1)
+#    define RGBLED_NUM 72
+#elif defined(KEYBOARD_sofle_sophie)
+#    define RGBLED_NUM 16
+#endif
+#undef RGBLED_SPLIT
+#define RGBLED_SPLIT { RGBLED_NUM/2, RGBLED_NUM/2 }
 #define RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_LIMIT_VAL 255
 #define RGBLIGHT_HUE_STEP 2
