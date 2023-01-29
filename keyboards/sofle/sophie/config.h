@@ -26,10 +26,6 @@
 #define USE_SERIAL
 #define SOFT_SERIAL_PIN D2
 
-// Disable depreciated
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 

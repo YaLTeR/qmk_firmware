@@ -30,9 +30,11 @@
 #define OLED_BRIGHTNESS 255
 #define OLED_UPDATE_INTERVAL 1000
 
+#if defined(KEYBOARD_sofle_rev1)
 #define WPM_LAUNCH_CONTROL
 #define WPM_SAMPLE_SECONDS 5
 #define WPM_SAMPLE_PERIODS 25
+#endif
 
 
 #if defined(KEYBOARD_sofle_sophie)
