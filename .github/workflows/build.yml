@@ -17,15 +17,9 @@ jobs:
       fail-fast: false
       matrix:
         keyboard:
-          - ergodox_ez
-          - ergodox_ez/shine
-          - ergodox_ez/glow
-          - moonlander
-          - planck/ez
           - planck/ez/glow
         keymap:
-          - default
-          - oryx
+          - yalter
 
     steps:
     - name: Checkout QMK Firmware
