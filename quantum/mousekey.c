@@ -79,7 +79,7 @@ bool should_mousekey_report_send(report_mouse_t *mouse_report) {
 static uint8_t move_unit(void) {
     uint16_t unit;
     if (mousekey_accel & (1 << 0)) {
-        unit = (MOUSEKEY_MOVE_DELTA * mk_max_speed) / 4;
+        unit = 1;
     } else if (mousekey_accel & (1 << 1)) {
         unit = (MOUSEKEY_MOVE_DELTA * mk_max_speed) / 2;
     } else if (mousekey_accel & (1 << 2)) {
