@@ -23,9 +23,6 @@
 #define NO_ACTION_ONESHOT
 #define USB_POLLING_INTERVAL_MS 1
 
-/* ws2812 RGB LED */
-#define RGB_DI_PIN D3
-
 #define OLED_TIMEOUT 60000
 #define OLED_BRIGHTNESS 255
 #define OLED_UPDATE_INTERVAL 1000
@@ -42,6 +39,10 @@
 #endif
 
 #ifdef RGBLIGHT_ENABLE
+
+#define RGBLIGHT_SLEEP
+#define RGB_DISABLE_WHEN_USB_SUSPENDED
+
 #undef RGBLED_NUM
 #if defined(KEYBOARD_sofle_rev1)
 #    define RGBLED_NUM 72
@@ -49,8 +50,9 @@
 #    define RGBLED_NUM 16
 #endif
 #undef RGBLED_SPLIT
+
 #define RGBLED_SPLIT { RGBLED_NUM/2, RGBLED_NUM/2 }
-#define RGBLIGHT_ANIMATIONS
+
 #define RGBLIGHT_LIMIT_VAL 255
 #define RGBLIGHT_HUE_STEP 2
 #define RGBLIGHT_SAT_STEP 5
