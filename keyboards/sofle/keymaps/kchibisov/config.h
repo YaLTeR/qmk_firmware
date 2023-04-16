@@ -27,21 +27,15 @@
 #define OLED_BRIGHTNESS 255
 #define OLED_UPDATE_INTERVAL 1000
 
-#if defined(KEYBOARD_sofle_rev1)
-#define WPM_LAUNCH_CONTROL
-#define WPM_SAMPLE_SECONDS 5
-#define WPM_SAMPLE_PERIODS 25
-#endif
-
-
 #if defined(KEYBOARD_sofle_sophie)
 #    define OLED_DISPLAY_128X64
 #endif
 
 #ifdef RGBLIGHT_ENABLE
 
+#define RGB_DI_PIN D3
+
 #define RGBLIGHT_SLEEP
-#define RGB_DISABLE_WHEN_USB_SUSPENDED
 
 #undef RGBLED_NUM
 #if defined(KEYBOARD_sofle_rev1)

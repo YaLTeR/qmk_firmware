@@ -278,13 +278,6 @@ static const char PROGMEM raw_logo[] = {
 #endif
 
     oled_write_raw_P(raw_logo, sizeof(raw_logo));
-
-#if defined(KEYBOARD_sofle_rev1)
-    oled_set_cursor(0, 14);
-    oled_write_ln_P(PSTR("WPM"), false);
-    oled_write(get_u8_str(get_current_wpm(), '0'), false);
-#endif
-
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
