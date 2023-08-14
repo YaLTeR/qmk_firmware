@@ -56,11 +56,11 @@ enum planck_keycodes {
 };
 
 enum tap_dance_codes {
-  DANCE_0,
+  DANCE_MSP_AGR,
 };
 
 // Meta-Space on tap, AltGr on hold
-#define MSP_AGR TD(DANCE_0)
+#define MSP_AGR TD(DANCE_MSP_AGR)
 #define M_PGUP LGUI(KC_PGUP)
 #define M_PGDN LGUI(KC_PGDN)
 
@@ -287,11 +287,11 @@ uint8_t dance_step(qk_tap_dance_state_t *state) {
 }
 
 
-void on_dance_0(qk_tap_dance_state_t *state, void *user_data);
-void dance_0_finished(qk_tap_dance_state_t *state, void *user_data);
-void dance_0_reset(qk_tap_dance_state_t *state, void *user_data);
+void on_dance_msp_agr(qk_tap_dance_state_t *state, void *user_data);
+void dance_msp_agr_finished(qk_tap_dance_state_t *state, void *user_data);
+void dance_msp_agr_reset(qk_tap_dance_state_t *state, void *user_data);
 
-void on_dance_0(qk_tap_dance_state_t *state, void *user_data) {
+void on_dance_msp_agr(qk_tap_dance_state_t *state, void *user_data) {
     if(state->count == 3) {
         tap_code16(LGUI(KC_SPACE));
         tap_code16(LGUI(KC_SPACE));
@@ -302,7 +302,7 @@ void on_dance_0(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void dance_0_finished(qk_tap_dance_state_t *state, void *user_data) {
+void dance_msp_agr_finished(qk_tap_dance_state_t *state, void *user_data) {
     dance_state[0].step = dance_step(state);
     switch (dance_state[0].step) {
         case SINGLE_TAP: register_code16(LGUI(KC_SPACE)); break;
@@ -312,7 +312,7 @@ void dance_0_finished(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
-void dance_0_reset(qk_tap_dance_state_t *state, void *user_data) {
+void dance_msp_agr_reset(qk_tap_dance_state_t *state, void *user_data) {
     wait_ms(10);
     switch (dance_state[0].step) {
         case SINGLE_TAP: unregister_code16(LGUI(KC_SPACE)); break;
@@ -324,5 +324,5 @@ void dance_0_reset(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-        [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
+        [DANCE_MSP_AGR] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_msp_agr, dance_msp_agr_finished, dance_msp_agr_reset),
 };
