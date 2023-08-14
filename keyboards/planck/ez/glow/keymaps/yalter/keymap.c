@@ -83,11 +83,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    KC_ESC,  MSP_AGR, KC_PSCR, KC_LALT, LOWER,   KC_SPC,  XXXXXXX, RAISE,   KC_LGUI, KC_LBRC, KC_RBRC, KC_ENT
+    KC_ESC,  MSP_AGR, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  XXXXXXX, RAISE,   KC_LGUI, KC_LBRC, KC_RBRC, KC_ENT
   ),
 
   [_LOWER] = LAYOUT_planck_grid(
-    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_VOLU, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PAUS, KC_DEL,
+    KC_GRV,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_VOLU, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_PSCR, KC_DEL,
     _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_VOLD, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BTN3, KC_INS,
     _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_ACL0, _______, KC_WH_D, KC_WH_U, KC_BTN1, KC_MS_U, KC_BTN2,
     _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, KC_MS_L, KC_MS_D, KC_MS_R
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_ADJUST] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, TFH,     _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, TFH,     _______, _______, _______, _______, KC_PAUS, _______,
     _______, _______, AU_ON,   AU_OFF,  AU_TOG,  _______, LC_TOGG, RGB_TOG, RGB_VAI, RGB_VAD, _______, QK_BOOT,
     _______, _______, _______, _______, VSRG,    _______, NK_TOGG, RGB_MOD, RGB_HUI, RGB_HUD, _______, _______,
     _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______
