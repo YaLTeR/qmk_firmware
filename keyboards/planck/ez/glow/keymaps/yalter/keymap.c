@@ -335,3 +335,58 @@ void dance_msp_agr_reset(qk_tap_dance_state_t *state, void *user_data) {
 qk_tap_dance_action_t tap_dance_actions[] = {
         [DANCE_MSP_AGR] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_msp_agr, dance_msp_agr_finished, dance_msp_agr_reset),
 };
+
+bool caps_word_press_software_qwerty(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        case KC_A ... KC_Z:
+            add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+            send_keyboard_report();
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+        case KC_MINS:
+            return true;
+
+        default:
+            return false; // Deactivate Caps Word.
+    }
+}
+
+bool caps_word_press_software_coldh(uint16_t keycode) {
+    switch (keycode) {
+        // Keycodes that continue Caps Word, with shift applied.
+        // Skip KC_P, which is a semicolon, and add KC_SCLN, which is a P.
+        case KC_A ... KC_O:
+        case KC_Q ... KC_Z:
+        case KC_SCLN:
+            add_weak_mods(MOD_BIT(KC_LSFT)); // Apply shift to next key.
+            send_keyboard_report();
+            return true;
+
+        // Keycodes that continue Caps Word, without shifting.
+        case KC_1 ... KC_0:
+        case KC_BSPC:
+        case KC_DEL:
+        case KC_UNDS:
+        case KC_MINS:
+            return true;
+
+        default:
+            return false; // Deactivate Caps Word.
+    }
+}
+
+bool caps_word_press_user(uint16_t keycode) {
+    if (IS_LAYER_ON(_COLDH)) {
+        // Hardware Col-DH uses software qwerty.
+        return caps_word_press_software_qwerty(keycode);
+    } else {
+        // Otherwise, assume software Col-DH.
+        return caps_word_press_software_coldh(keycode);
+    }
+}
