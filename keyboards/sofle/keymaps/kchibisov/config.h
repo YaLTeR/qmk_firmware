@@ -4,16 +4,11 @@
 
 
 /* Select hand configuration */
-
-#define MASTER_LEFT
-//#define MASTER_RIGHT
-//#define EE_HANDS
-//#define USE_SERIAL_PD2
-//#define USE_MATRIX_I2C
+#define EE_HANDS
 
 #define LAYER_STATE_8BIT
 
-#undef ENCODER_RESOLUTION 
+#undef ENCODER_RESOLUTION
 #define ENCODER_RESOLUTION 4
 
 #define TAPPING_FORCE_HOLD
@@ -33,7 +28,7 @@
 
 #ifdef RGBLIGHT_ENABLE
 
-#define RGB_DI_PIN D3
+#define WS2812_DI_PIN D3
 
 #define RGBLIGHT_SLEEP
 
