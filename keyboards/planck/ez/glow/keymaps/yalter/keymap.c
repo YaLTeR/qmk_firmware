@@ -387,6 +387,9 @@ bool caps_word_press_user(uint16_t keycode) {
         return caps_word_press_software_qwerty(keycode);
     } else {
         // Otherwise, assume software Col-DH.
-        return caps_word_press_software_coldh(keycode);
+        // return caps_word_press_software_coldh(keycode);
+
+        // Software Col-DH is over.
+        return caps_word_press_software_qwerty(keycode);
     }
 }
