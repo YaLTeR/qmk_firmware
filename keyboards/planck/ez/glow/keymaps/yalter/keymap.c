@@ -67,6 +67,7 @@ enum tap_dance_codes {
 enum planck_layers {
   _BASE,
   _COLDH,
+  _EXPERIM,
   _LOWER,
   _RAISE,
   _ADJUST,
@@ -79,6 +80,7 @@ enum planck_layers {
 #define TFH TG(_TFH)
 #define VSRG TG(_VSRG)
 #define COLDH TG(_COLDH)
+#define EXPERIM TG(_EXPERIM)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_planck_grid(
@@ -93,6 +95,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
     KC_ESC,  MSP_AGR, KC_LGUI, KC_LALT, LOWER,   KC_SPC,  XXXXXXX, RAISE,   KC_LGUI, KC_LBRC, KC_RBRC, KC_ENT
+  ),
+
+  [_EXPERIM] = LAYOUT_planck_grid(
+    _______, _______,      _______,      _______,      _______,      _______, _______, _______,      _______,      _______,      _______,         _______,
+    XXXXXXX, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), _______, _______, RSFT_T(KC_J), RCTL_T(KC_K), LALT_T(KC_L), LGUI_T(KC_SCLN), _______,
+    XXXXXXX, _______,      _______,      _______,      _______,      _______, _______, _______,      _______,      _______,      _______,         XXXXXXX,
+    _______, _______,      XXXXXXX,      CAPSWRD,      _______,      _______, XXXXXXX, _______,      XXXXXXX,      _______,      _______,         _______
   ),
 
   [_LOWER] = LAYOUT_planck_grid(
@@ -110,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_ADJUST] = LAYOUT_planck_grid(
-    _______, _______, _______, _______, _______, TFH,     _______, _______, _______, _______, KC_PAUS, QK_RBT,
+    _______, _______, _______, EXPERIM, _______, TFH,     _______, _______, _______, _______, KC_PAUS, QK_RBT,
     _______, _______, AU_ON,   AU_OFF,  AU_TOG,  _______, LC_TOGG, RGB_TOG, RGB_VAI, RGB_VAD, _______, QK_BOOT,
     _______, _______, _______, COLDH,   VSRG,    _______, NK_TOGG, RGB_MOD, RGB_HUI, RGB_HUD, _______, _______,
     _______, _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______, _______, _______
