@@ -23,7 +23,7 @@
 
 #define OLED_TIMEOUT 60000
 #define OLED_BRIGHTNESS 255
-#define OLED_UPDATE_INTERVAL 1000
+#define OLED_UPDATE_INTERVAL 250
 
 #if defined(KEYBOARD_sofle_sophie)
 #    define OLED_DISPLAY_128X64
