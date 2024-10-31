@@ -4,7 +4,7 @@ enum sofle_layers {
     _DEFAULTS = 0,
     _QWERTY = 0,
     _LOWER,
-    _RAISE,
+    _UPPER,
     _ADJUST,
 };
 
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //            \--------+--------+--------+---------+-------|   |--------+---------+--------+---------+-------/
 ),
 
-[_RAISE] = LAYOUT(
+[_UPPER] = LAYOUT(
   //,------------------------------------------------.                    ,---------------------------------------------------.
    _______, _______,_______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
   //|------+-------+--------+--------+--------+------|                   |--------+-------+--------+--------+--------+---------|
@@ -231,8 +231,8 @@ static void render_info(void) {
         case _LOWER:
             oled_write_ln_P(PSTR("Lower"), false);
             break;
-        case _RAISE:
-            oled_write_ln_P(PSTR("Raise"), false);
+        case _UPPER:
+            oled_write_ln_P(PSTR("Upper"), false);
             break;
         case _ADJUST:
             oled_write_ln_P(PSTR("Adj"), false);
