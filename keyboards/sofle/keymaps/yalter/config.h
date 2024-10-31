@@ -34,7 +34,6 @@
 #define WS2812_DI_PIN D3
 
 #define RGBLIGHT_SLEEP
-#define RGB_DISABLE_WHEN_USB_SUSPENDED
 
 #undef RGBLED_NUM
 #if defined(KEYBOARD_sofle_rev1)
